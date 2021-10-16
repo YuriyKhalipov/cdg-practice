@@ -1,6 +1,5 @@
 require 'rspec'
 require 'tempfile'
-require 'fileutils'
 require './lab4_3.rb'
 
 RSpec.describe "Cash machine" do 
