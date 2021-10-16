@@ -47,22 +47,22 @@ RSpec.describe "Methods for working with files" do
   describe 'write' do
     context "when adding new lines to the file" do
       it "writes lines to the file" do 
-      write(students_arr, where('19', test_file), test_results)
-      expect{index(test_results)}.to output("Александр Смирнов 18\nМаксим Волков 18\nИван Иванов 19\nМихаил Воробьёв 19\n").to_stdout
+        write(students_arr, where('19', test_file), test_results)
+        expect{index(test_results)}.to output("Александр Смирнов 18\nМаксим Волков 18\nИван Иванов 19\nМихаил Воробьёв 19\n").to_stdout
       end
     end
 
     context "when adding an existing lines to the file" do
       it "doesn't write lines to the file" do 
-      write(students_arr, where('18', test_file), test_results)
-      expect{index(test_results)}.to output("Александр Смирнов 18\nМаксим Волков 18\n").to_stdout
+        write(students_arr, where('18', test_file), test_results)
+        expect{index(test_results)}.to output("Александр Смирнов 18\nМаксим Волков 18\n").to_stdout
       end
     end
 
     context "when adding a nonexistent line to the file" do
       it "doesn't write lines to the file" do 
-      write(students_arr, where('0', test_file), test_results)
-      expect{index(test_results)}.to output("Александр Смирнов 18\nМаксим Волков 18\n").to_stdout
+        write(students_arr, where('0', test_file), test_results)
+        expect{index(test_results)}.to output("Александр Смирнов 18\nМаксим Волков 18\n").to_stdout
       end
     end
   end
