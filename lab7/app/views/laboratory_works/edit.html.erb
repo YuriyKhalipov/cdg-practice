@@ -1,0 +1,10 @@
+<h2>Edit report</h2>
+<%= form_with model: @labs do |f| %>
+  <h3>New title</h3>
+  <%= f.text_field :title %>
+  <h3>New description</h3>
+  <%= f.text_area :text %>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h1></h1>
+<% flash.each do |msg| %>
+  <%= msg %>
+<% end %>
+
+<h3><%= link_to 'Add report', new_lab_path %></h3>
+
+<% @labs.each do |l| %>
+  <div>
+    <h3> Title: <%= l.title %> </h3>
+  </div>
+  <h4><i>User: <%= l.user %></i></h4>
+  <h3>Description: </h3>
+  <%= l.text %>
+  <h3>Mark: <%= l.mark.nil? ? "" : l.mark %></h3>
+
+  <%= link_to 'Open', lab_path(l) %>
+  <%= link_to 'Add mark', mark_lab_path(l) %>
+  <%= link_to 'Edit', edit_lab_path(l) %>
+  <%= link_to 'Remove', lab_path(l), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
