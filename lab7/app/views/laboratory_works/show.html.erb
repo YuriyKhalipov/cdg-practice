@@ -1,0 +1,16 @@
+<div>
+  <h3>ID: <%= @lab.id %> </h3>
+  <h3>Title: <%= @lab.title %> </h3>
+</div>
+
+<div>
+  <h3>Description: </h3>
+  <%= @lab.text %>
+</div>
+<div>
+  <h3>Mark: <%= @lab.mark.nil? ? "" : @lab.mark %></h3>
+</div>
+<h4><i>User: <%= @lab.user.last_name %> <%= @lab.user.first_name %></i></h4>
+<h4><i><%= @lab.user.email %></i></h4>
+
+<%= link_to 'Back', root_url %>

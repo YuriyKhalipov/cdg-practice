@@ -1,0 +1,5 @@
+<h3>Add mark (A, B, C, D, E, F)</h3>
+<%= form_with url: mark_lab_path(@lab) do |f| %>
+  <%= f.text_field :mark %>
+  <%= f.submit %>
+<% end %>
