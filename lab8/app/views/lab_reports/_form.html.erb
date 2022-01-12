@@ -1,0 +1,11 @@
+<%= form_with model: @lab_report do |l| %>
+  Title
+  <div>
+    <%= l.text_field :title, :size=>"50", required: true, maxlength: 250, placeholder: "Title" %>
+  </div>
+  Description
+  <div>
+    <%= l.text_field :description, :size=>"50", required: true, maxlength: 500, placeholder: "Description" %>
+  </div>
+    <%= l.submit "Save" %>
+<% end %>

@@ -1,0 +1,30 @@
+  <% if user_signed_in? %>
+    <p><%= current_user.email %></p>
+    <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'Sign up', new_user_registration_path %>
+  <% end %>
+
+  <p>
+    <%= button_to "Add report",  new_lab_report_path, method: :get %>
+  </p>
+
+<% @lab_reports.each do |l| %>
+  <h3><%= l.title %></h3>
+  <p><small><i>User: <%= l.user.first_name %> <%= l.user.last_name %> (<%= l.user.email %>)</i></small></p>
+  <p>
+    <%= l.description %>
+  </p>
+
+  <p>
+    <% if l.grade == nil %>
+      <%= button_to 'Add mark', mark_lab_report_path(l), method: :get %>
+    <% else %>
+      <h3><%= "Mark: #{l.grade}" %><h3>
+      <%= button_to 'Edit mark', mark_lab_report_path(l), method: :get %>
+    <% end %>
+    <%= button_to 'Edit', edit_lab_report_path(l), method: :get %>
+    <%= button_to "Destroy", lab_report_path(l), method: :delete %>
+  </p>
+
+<% end %>

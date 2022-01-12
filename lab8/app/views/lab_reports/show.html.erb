@@ -1,0 +1,10 @@
+<p><%= current_user.email %></p>
+<h1><%= @lab_report.title %></h1>
+
+<p>
+  <time datetime="<%= @lab_report.created_at.strftime('%Y-%m-%d %H:%M:%S') %>">
+    <%= @lab_report.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
+  </time>
+  <br>
+  <%= @lab_report.description %>
+</p>
