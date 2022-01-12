@@ -1,0 +1,8 @@
+<%= form_with model: @lab_report do |l| %>
+  <p><%= current_user.email %></p>
+  Mark
+  <div>
+    <%= l.text_field :grade, :size=>"50", required: true, maxlength: 3, placeholder: "Mark" %>
+  </div>
+    <%= l.submit "Save" %>
+<% end %>
